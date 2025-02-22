@@ -12,10 +12,6 @@ public class Main {
         kitchen.addItem(elixir);
 
 
-        NPC stranger = new NPC("Stranger", "a wise-looking elder", "A traveler! Beware of the monsters ahead!");
-        hall.addNpc(stranger);
-
-
         Player adventurer = new Player("Adventurer", "A brave young man.", 100, hall);
 
         MUDController mudController = new MUDController(adventurer);

@@ -51,9 +51,6 @@ public class MUDController {
             case "inventory":
                 checkInventory();
                 break;
-            case "talk":
-                talkToNPC(argument);
-                break;
             case "help":
                 showHelp();
                 break;
@@ -128,16 +125,6 @@ public class MUDController {
         player.showInventory();
     }
 
-    private void talkToNPC(String NpcName){
-        Room room = player.getCurrRoom();
-        NPC npc = room.getNpc(NpcName);
-        if(npc != null){
-            System.out.println("You met somebody! " + npc.getName() + " says: " + npc.talk());
-        }else{
-            System.out.println("No one is here.");
-        }
-    }
-
     /**
      * Show help commands
      */
@@ -147,7 +134,6 @@ public class MUDController {
         System.out.println("move <direction>: Move in a specified direction.");
         System.out.println("pick <item>: Pick up an item.");
         System.out.println("inventory: List items you are carrying.");
-        System.out.println("talk: Talk to NPC.");
         System.out.println("help: Show this help menu.");
         System.out.println("quit or exit: End the game.");
     }
